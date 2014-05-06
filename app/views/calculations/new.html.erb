@@ -1,29 +1,108 @@
-<div id="calcForm" class="container">
+<!-- div id="calcForm" class="container">
 
-        <h1>enter values below to being calculation</h1>
-	<%= form_for :calculation do |f| %>
-	<p>
- 	   <%= f.label :email %><br>
- 	   <%= f.text_field :email %>
-  	</p>
-	<p>
- 	   <%= f.label :"House Value" %><br>
- 	   <%= f.text_field :houseValue %>
-  	</p>
-	<p>
- 	   <%= f.label :"Deposit Amount" %><br>
- 	   <%= f.text_field :depositAmount %>
-  	</p>
+<h1>enter values below to being calculation</h1>
+<%= form_for :calculation do |f| %>
+       <p>
+<%= f.label :email %><br>
+<%= f.text_field :email %>
+</p>
+<p>
+<%= f.label :"House Value" %><br>
+<%= f.text_field :houseValue %>
+</p>
+<p>
+<%= f.label :"Deposit Amount" %><br>
+<%= f.text_field :depositAmount %>
+</p>
 
-   	<p>
-    	<%= f.submit %>
-  	</p>
+<p>
+<%= f.submit %>
+</p>
 <% end %>
+</div -->
+<div class="container calcWrapper">
+	<div class="panel panel-default">
+		<div class="panel-body calc-panel">
+			Do you have a house to sell? <br>
+			<input type="radio" name="rdSell" value="yes">Yes<br>
+			<input type="radio" name="rdSell" value="no">No
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-body calc-panel">
+			<div class="panel-header">Selling your House</div>
+			<p>
+			How much did you pay for your house?<br>
+			<div class="defaultSlider" id="sliderPayFor"></div>
+			</p>
+			<p>
+			How much will you sell it for?<br>
+			<div class="defaultSlider" id="sliderSellFor"></div>
+			</p>
+
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-body calc-panel">
+			<div class="panel-header">Costs</div>
+			<table>
+				<tr class="calc-table-row">
+					<td class="calc-table-label">Solicitor Fees: </td><td class="calc-table-value">£1000 </td></tr>
+				<tr class="calc-table-row"><td class="calc-table-label">Stamp Duty: </td><td class="calc-table-value">£1000 </td></tr>
+				<tr class="calc-table-row"><td class="calc-table-label">Estate Agents: </td><td class="calc-table-value">£1000 </td></tr>
+			</table>
+			<p>
+			Extra Costs: 
+			<div class="defaultSlider" id="sliderSellFor"></div>
+			</p>
+			</p>
+
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-body calc-panel">
+			<div class="panel-header">Mortgage</div>
+			<table>
+				<tr class="calc-table-row">
+					<td class="calc-table-label">You need to borrow: </td><td class="calc-table-value">£1000 </td></tr>
+				<tr class="calc-table-row"><td class="calc-table-label">At Loan to Value: </td><td class="calc-table-value">£1000 </td></tr>
+
+			</table>
+			<p>
+			Loan Taken Over: 
+			<div class="defaultSlider" id="sliderSellFor"></div>
+			</p>
+			<p>
+			At Interest Rate: 
+			<div class="defaultSlider" id="sliderSellFor"></div>
+			</p>
+			</p>
+
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-body calc-panel">
+
+			<p class="calc-total">
+			You'll Pay <strong>£800</strong> per month
+			</P>
+		</div>
+	</div>
+
+
+
+
 </div>
+
 
 <script>
 $(document).ready(function(){
-  var calc = new MgCalculation();	
-});
+		var calc = new MgCalculation();	
+		$( ".defaultSlider" ).slider({
+			range: "min",
+     			min: 0,
+      			max: 2000000,
+			});
+		})
 </script>
 

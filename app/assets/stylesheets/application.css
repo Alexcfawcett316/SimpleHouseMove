@@ -12,7 +12,34 @@
  *
  *= require_tree .
  *= require_self
+ *= require jquery.ui.slider
  */
-#contentWrapper{
-	padding-top:40px;
+.calcWrapper{
+	padding-top:80px;
 }
+.defaultSlider{
+	width:80%;
+	height:20px;
+	margin-left:10%;
+}
+.panel-header{
+	font-size:20px;
+	padding-bottom:5px;
+}
+.calc-panel p{
+ 	padding-top:5px;
+}
+.calc-table-row{
+	height: 30px;
+}
+.calc-table-label{
+	min-width:150px;
+}
+.calc-table-value{
+	font-weight:bold;
+}
+.calc-total{
+	font-size:24px;
+}
+
+

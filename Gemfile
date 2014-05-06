@@ -42,4 +42,5 @@ gem 'spring',        group: :development
 
 gem 'bootstrap-sass', '~> 3.1.1'
 gem 'backbone-on-rails'
+gem 'jquery-ui-rails'
 
