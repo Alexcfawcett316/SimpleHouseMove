@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  email: MyText
+  houseValue: 9.99
+  depositAmount: 9.99
+  mortgageAmount: 9.99
+
+two:
+  email: MyText
+  houseValue: 9.99
+  depositAmount: 9.99
+  mortgageAmount: 9.99

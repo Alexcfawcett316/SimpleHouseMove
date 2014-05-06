@@ -1,0 +1,29 @@
+<div id="calcForm" class="container">
+
+        <h1>enter values below to being calculation</h1>
+	<%= form_for :calculation do |f| %>
+	<p>
+ 	   <%= f.label :email %><br>
+ 	   <%= f.text_field :email %>
+  	</p>
+	<p>
+ 	   <%= f.label :"House Value" %><br>
+ 	   <%= f.text_field :houseValue %>
+  	</p>
+	<p>
+ 	   <%= f.label :"Deposit Amount" %><br>
+ 	   <%= f.text_field :depositAmount %>
+  	</p>
+
+   	<p>
+    	<%= f.submit %>
+  	</p>
+<% end %>
+</div>
+
+<script>
+$(document).ready(function(){
+  var calc = new MgCalculation();	
+});
+</script>
+
