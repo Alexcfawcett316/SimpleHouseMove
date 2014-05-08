@@ -1,82 +1,72 @@
-<!-- div id="calcForm" class="container">
-
-<h1>enter values below to being calculation</h1>
-<%= form_for :calculation do |f| %>
-       <p>
-<%= f.label :email %><br>
-<%= f.text_field :email %>
-</p>
-<p>
-<%= f.label :"House Value" %><br>
-<%= f.text_field :houseValue %>
-</p>
-<p>
-<%= f.label :"Deposit Amount" %><br>
-<%= f.text_field :depositAmount %>
-</p>
-
-<p>
-<%= f.submit %>
-</p>
-<% end %>
-</div -->
-<div class="container calcWrapper">
+<div id="calculatorMain" class="container calcWrapper">
 	<div class="panel panel-default">
+		<div class="panel-heading panel-header">Buying your House</div>
 		<div class="panel-body calc-panel">
-			Do you have a house to sell? <br>
-			<input type="radio" name="rdSell" value="yes">Yes<br>
-			<input type="radio" name="rdSell" value="no">No
+			<p>
+			How much is the house you want to buy? <span class="slider-value" id="lblHowMuchBuy"></span><br>
+			<div class="defaultSlider" id="sliderToBuy"></div>
+			</p>
+			Do you have a house to sell?
+			<input id="rdSellYes" type="radio" name="rdSell" value="yes">Yes
+			<input id="rdSellNo" type="radio" name="rdSell" value="no">No
 		</div>
 	</div>
-	<div class="panel panel-default">
-		<div class="panel-body calc-panel">
-			<div class="panel-header">Selling your House</div>
-			<p>
-			How much did you pay for your house?<br>
+	<div id="pnlSelling" class="panel panel-default">
+		<div class="panel-heading panel-header">Selling your House</div>
+
+		<div class="panel-body calc-panel">			<p>
+			How much did you pay for your house? <span class="slider-value" id="lblHowMuch"></span><br>
 			<div class="defaultSlider" id="sliderPayFor"></div>
 			</p>
 			<p>
-			How much will you sell it for?<br>
+			How much will you sell it for? <span class="slider-value" id="lblSellFor"></span><br>
 			<div class="defaultSlider" id="sliderSellFor"></div>
 			</p>
 
 		</div>
 	</div>
 	<div class="panel panel-default">
+		<div class="panel-heading panel-header">Costs</div>
 		<div class="panel-body calc-panel">
-			<div class="panel-header">Costs</div>
-			<table>
-				<tr class="calc-table-row">
-					<td class="calc-table-label">Solicitor Fees: </td><td class="calc-table-value">£1000 </td></tr>
-				<tr class="calc-table-row"><td class="calc-table-label">Stamp Duty: </td><td class="calc-table-value">£1000 </td></tr>
-				<tr class="calc-table-row"><td class="calc-table-label">Estate Agents: </td><td class="calc-table-value">£1000 </td></tr>
-			</table>
 			<p>
-			Extra Costs: 
-			<div class="defaultSlider" id="sliderSellFor"></div>
+			<div class="costs-Label">Solicitors Fee:</div> <span id="lblSolVal" class="costs-value"></span><br>
 			</p>
+			<div class="sliderAdjust" id="sliderSolicitor"></div>
+			<p>
+			<div class="costs-Label">Stamp Duty:</div>  <span class="costs-value">£1000</span> <br>
 			</p>
+			<p>
+			<div class="costs-Label">Estate Agents:</div>  <span id="lblEstateAgent" class="costs-value"></span>
+			</p>
+			<div class="sliderAdjust" id="sliderEstateAgent"></div>
+			<p>
+			<div class="costs-Label">Extra Costs:</div>  <span id="lblExtraCosts" class="costs-value"></span><br>
+			</p>
+
+			<div class="sliderAdjust" id="sliderExtraCosts"></div>
+			
 
 		</div>
 	</div>
 	<div class="panel panel-default">
-		<div class="panel-body calc-panel">
-			<div class="panel-header">Mortgage</div>
-			<table>
-				<tr class="calc-table-row">
-					<td class="calc-table-label">You need to borrow: </td><td class="calc-table-value">£1000 </td></tr>
-				<tr class="calc-table-row"><td class="calc-table-label">At Loan to Value: </td><td class="calc-table-value">£1000 </td></tr>
+		<div class="panel-heading panel-header">Mortgage</div>
 
-			</table>
+		<div class="panel-body calc-panel">
 			<p>
-			Loan Taken Over: 
-			<div class="defaultSlider" id="sliderSellFor"></div>
+			<div class="costs-Label">You need to borrow:</div> <span class="costs-value">£1000</span><br>
 			</p>
 			<p>
-			At Interest Rate: 
-			<div class="defaultSlider" id="sliderSellFor"></div>
+			<div class="costs-Label">At loan to value</div> <span class="costs-value">80%</span>
 			</p>
+			<p>
+			<div class="costs-Label">Loan Taken Over:</div> <span id="lblTakenOver" class="costs-value">35 years</span></p>
+			<div class="sliderAdjust" id="sliderTakenOver"></div>
 			</p>
+			<p>
+			<div class="costs-Label">At Interest Rate:</div> <span id="lblInterestRate" class="costs-value">2%</span></p>
+
+			<div class="sliderAdjust" id="sliderInterestRate"></div>
+						</p>
 
 		</div>
 	</div>
@@ -98,11 +88,6 @@
 <script>
 $(document).ready(function(){
 		var calc = new MgCalculation();	
-		$( ".defaultSlider" ).slider({
-			range: "min",
-     			min: 0,
-      			max: 2000000,
-			});
 		})
 </script>
 

@@ -22,9 +22,13 @@
 	height:20px;
 	margin-left:10%;
 }
+.sliderAdjust{
+	width:80%;
+	height:20px;
+	margin-left:10%;
+}
 .panel-header{
 	font-size:20px;
-	padding-bottom:5px;
 }
 .calc-panel p{
  	padding-top:5px;
@@ -40,6 +44,18 @@
 }
 .calc-total{
 	font-size:24px;
+}
+.slider-value{
+	padding-left:10px;
+	font-weight:bold;
+}
+
+.costs-value{
+	font-weight:bold;
+}
+.costs-Label{
+	width:150px;
+	display:inline-block;
 }
 
 
